@@ -13,7 +13,7 @@ EmploymentType = ['Unemployed',
 HasCoSigner = ['Yes',
                'No']
 
-st.title('Default-Shield: AI-Powered Default Defenders')
+st.title('Predicting Loan Apporval')
 
 col3,col4,col5 = st.columns(3)
 
@@ -64,4 +64,4 @@ if st.button('Predict'):
          'MonthsEmployed': [MonthsEmployed], 'InterestRate': [InterestRate],
           'EmploymentType': [employment], 'HasCoSigner': [co_signer]})
     result = pipe.predict(input_df)
-    st.header("Will he be a defaulter - " + str("No" if int(result[0]) == 0 else "Yes"))
+    st.header("Will you get your loan apporved - " + str("No" if int(result[0]) == 0 else "Yes"))
